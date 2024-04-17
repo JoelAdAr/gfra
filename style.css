@@ -1,0 +1,297 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define color variables */
+:root {
+    --primary-color: #6B7E99;
+    --neutral-color: #EDEDED;
+    --accent-color-1: #A2B29F;
+    --accent-color-2: #B18B9C;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--neutral-color);
+}
+
+/* ESTLIZACIÓN BARRA DE NAVEGACIÓN */
+nav {
+    background-color: white;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+ul.ul-nav {
+    list-style-type: none;
+    display: flex;
+}
+
+ul.ul-nav li {
+    margin-right: 20px;
+}
+
+ul.ul-nav li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+}
+
+
+/* ESTILIZACIÓN MAIN*/
+
+main {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    height: 100vh;
+    
+}
+
+
+
+
+
+
+/* Col Siniestra (Figuras PAU) */
+#pau-section {
+    grid-column: 1;
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    max-height: 100vh; /* Set a maximum height for the section */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+/* Hide the scrollbar */
+#pau-section::-webkit-scrollbar {
+    display: none;
+}
+
+/* Style for the heading */
+#pau-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Style for the list */
+#pau-section ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+/* Style for list items */
+#pau-section li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd; /* Add border between list items */
+}
+
+/* Optional: Style for the last list item to remove the bottom border */
+#pau-section li:last-child {
+    border-bottom: none; /* Remove bottom border */
+}
+
+
+
+
+/* COL CENTRAL (DICCIONARI/MOTOR BÚSQUEDA) */
+#search-section {
+    grid-column: 2;
+    background-color: #ffffff; /* Just for visualization */
+    padding: 20px;
+
+    /* Use flexbox to align items vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #search-inputs-container {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    input[id="search-figure"],
+    select[id="search-author"],
+    button {
+        height: 30px;
+        border: none;
+        border-bottom: 2px solid var(--primary-color);
+        border-radius: 0;
+        outline: none;
+        margin: 0;
+        margin-top: 20px;
+        margin-right: 20px;
+        padding: 0;
+        font-size: 18px;
+    }
+
+    input[id="search-figure"] {
+        width: 250px;
+    }
+
+    select[id="search-author"] {
+        width: 300px;
+    }
+
+    button {
+        padding: 0 10px; /* Add padding for button */
+        background-color: var(--primary-color);
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #results {
+        text-align: justify; /* Justify text */
+    }
+
+     /* Media query for smaller screens */
+     @media (max-width: 1350px) {
+        #search-inputs-container {
+            flex-direction: column; /* Stack items vertically on small screens */
+            align-items: flex-start;
+
+        }
+    }
+
+    
+}
+
+
+
+
+/* Col Diestra (Lista de Autores) */
+#list-authors-section {
+    grid-column: 3;
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    display: grid; /* Use CSS grid for layout */
+    gap: 10px; /* Add gap between grid items */
+}
+
+/* Style for the authors list heading */
+#list-authors-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Style for the list of authors */
+#list-authors-section ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    max-height: 90vh; /* Set a maximum height for the list */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Style for each author item */
+#list-authors-section li {
+    border-bottom: 1px solid #ddd; /* Add border between author items */
+    padding: 10px 0;
+}
+
+/* Style for author name */
+#list-authors-section h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Style for era and origin */
+#list-authors-section p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666; /* Gray color for era and origin */
+}
+
+
+
+
+/* ESTILIZACIÓN FOOTER*/
+/* Footer styles */
+footer {
+    background-color:var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Contact form styles */
+#contact-form {
+    margin-bottom: 20px;
+}
+
+#contact-form h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+#footer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #6B7E99;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #556a7f;
+}
+
+/* Social links styles */
+#social-links {
+    display: flex;
+    justify-content: center;
+}
+
+#social-links a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#social-links a:hover {
+    color: #6B7E99;
+}
